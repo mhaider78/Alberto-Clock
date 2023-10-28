@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Alberto-Clock</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,600,600i,700,700i|Satisfy|Comic+Neue:300,300i,400,400i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Delicious
+  * Updated: Sep 18 2023 with Bootstrap v5.3.2
+  * Template URL: https://bootstrapmade.com/delicious-free-restaurant-bootstrap-theme/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+  
+
+
+  <style>
+    /* Common styling for product cards */
+    .product-card {
+        width: 300px;
+        margin: 10px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        text-align: center;
+        transition: transform 0.3s, background-color 0.3s;
+        cursor: pointer;
+        border-radius: 5px; /* Rounded corners */
+    }
+
+    /* Styling for the modal */
+    .modal {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 400px;
+        padding: 20px;
+        border: 2px solid #333; /* Border for the modal */
+        border-radius: 5px; /* Rounded corners */
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        height: 500px;
+    }
+
+    /* Styling for the modal overlay */
+    .modal-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        /* background-color: rgba(0, 0, 0, 0.5); */
+        height: 300px;
+    }
+
+    /* Hover effect for product cards */
+    .product-card:hover {
+        background-color: #9dcfdb; /* Change the background color on hover */
+    }
+
+    /* Category buttons styling */
+    .category-buttons {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .category-button {
+        padding: 10px 20px;
+        margin: 5px;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+        background-color: #93e9ff;
+        color: #0f0f0f;
+    }
+
+    /* Responsive layout */
+    @media (max-width: 768px) {
+        .product-card {
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        .category-buttons {
+            flex-direction: column;
+        }
+        .hwrap {
+       overflow: hidden; /* HIDE SCROLL BAR */
+        background: #eee;
+      }
+     
+
+    }
+</style>
+ 
+  
+</head>
+
+<body>
+
+
+  <!-- ======= Top Bar ======= -->
+  <section id="topbar" class="d-flex align-items-center fixed-top topbar-transparent">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-center justify-content-lg-start">
+      <i class="bi bi-phone d-flex align-items-center"><span>021-222-2222</span></i>
+      <!-- <i class="bi bi-clock ms-4 d-none d-lg-flex align-items-center"><span>Mon-Sat: 11:00 AM - 23:00 PM</span></i> -->
+    </div>
+  </section>
+  
+         
+
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+      <div class="logo me-auto">
+        <h1><a href="index.html"></a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <a href="index.html"><img src="https://i.postimg.cc/pThpgZcq/background-remover.png" alt="" class="img-fluid" style="width: 200px; height: 150px;"></a>
+      </div>
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#why-us">About</a></li>
+          <li><a class="nav-link scrollto" href="#menu">Watches</a></li>
+          <li><a class="nav-link scrollto" href="#specials">Specials</a></li>
+          <!-- <li><a class="nav-link scrollto" href="#events">Events</a></li> -->
+          <li><a class="nav-link scrollto" href="#gallery">Gallery</a></li>
+          <li><a class="nav-link scrollto" href="#chefs">Our Team</a></li>
+          <li><a class="nav-link scrollto" href="#reviews">Reviews</a></li>
+    
+          <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a> -->
+            <!-- <ul>
+              <li><a href="#">Drop Down 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="#">Deep Drop Down 1</a></li>
+                  <li><a href="#">Deep Drop Down 2</a></li>
+                  <li><a href="#">Deep Drop Down 3</a></li>
+                  <li><a href="#">Deep Drop Down 4</a></li>
+                  <li><a href="#">Deep Drop Down 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Drop Down 2</a></li>
+              <li><a href="#">Drop Down 3</a></li>
+              <li><a href="#">Drop Down 4</a></li>
+            </ul>
+          </li> -->
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+     
+
+      <a href="#book-a-table" class="book-a-table-btn scrollto">Book a Order</a>
+      
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div class="hero-container">
+      <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+        <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+        <div class="carousel-inner" role="listbox">
+
+          <!-- Slide 1 -->
+          <div class="carousel-item active" style="background-image: url(https://i.postimg.cc/ydXPtcQg/wp2168277.jpg);">
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2 class="animate__animated animate__fadeInDown"><span>Precision </span> & Elegance:</h2>
+                <p class="animate__animated animate__fadeInUp">Alberto Clocks is synonymous with precision timekeeping and elegant design. Our watches are meticulously crafted to offer the utmost accuracy while exuding timeless style</p>
+                <div>
+                  <a href="#menu" class="btn-menu animate__animated animate__fadeInUp scrollto">Our Watches</a>
+                  <a href="#book-a-table" class="btn-book animate__animated animate__fadeInUp scrollto">Book a Order</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="carousel-item" style="background-image: url(https://i.postimg.cc/vZjms9RB/Watches.webp);">
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2 class="animate__animated animate__fadeInDown"> <span>Quality</span>Craftsmanship:</h2>
+                <p class="animate__animated animate__fadeInUp">We take pride in the exceptional craftsmanship that goes into every Alberto timepiece. Our watches are built to last, using high-quality materials and expert workmanship.</p>
+                <div>
+                  <a href="#menu" class="btn-menu animate__animated animate__fadeInUp scrollto">Our Watches</a>
+                  <a href="#book-a-table" class="btn-book animate__animated animate__fadeInUp scrollto">Book a Order</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="carousel-item" style="background-image: url(https://i.postimg.cc/V5Q3gY2z/Wolf-1834-Watch-Collection-Box-001-7.jpg);">
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2 class="animate__animated animate__fadeInDown"><span>Affordable</span>luxury:</h2>
+                <p class="animate__animated animate__fadeInUp">Alberto Clocks brings affordable luxury to your wrist. We believe that everyone should have access to beautifully designed, high-quality watches without breaking the bank</p>
+                <div>
+                  <a href="#menu" class="btn-menu animate__animated animate__fadeInUp scrollto">Our Watches</a>
+                  <a href="#book-a-table" class="btn-book animate__animated animate__fadeInUp scrollto">Book a Order</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+        </a>
+
+        <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+          <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+        </a>
+
+      </div>
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <!-- <section id="about" class="about">
+      <div class="container-fluid">
+
+        <div class="row">
+
+          <div class="col-lg-5 align-items-stretch video-box" style='background-image: url("assets/img/about.jpg");'>
+            <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
+          </div>
+
+          <div class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch">
+
+            <div class="content">
+              <h3>Eum ipsam laborum deleniti <strong>velit pariatur architecto aut nihil</strong></h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
+              </p>
+              <p class="fst-italic">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                magna aliqua.
+              </p>
+              <ul>
+                <li><i class="bx bx-check-double"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+                <li><i class="bx bx-check-double"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
+                <li><i class="bx bx-check-double"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
+              </ul>
+              <p>
+                Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                culpa qui officia deserunt mollit anim id est laborum
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>End About Section -->
+
+    <!-- ======= Whu Us Section ======= -->
+    <section id="why-us" class="why-us">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Why choose <span>Our Store</span></h2>
+          <p>We offer a diverse range of clock designs, from classic to contemporary, ensuring there's a perfect timepiece for every style</p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-4">
+            <div class="box">
+              <span>01</span>
+              <h4>Unmatched Precision & Style:</h4>
+              <p>Alberto Clocks is dedicated to delivering watches that combine unparalleled precision with timeless elegance. Our timepieces are a symbol of craftsmanship, ensuring you always have a reliable and fashionable companion on your wrist.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mt-4 mt-lg-0">
+            <div class="box">
+              <span>02</span>
+              <h4>Exceptional Customer Service:</h4>
+              <p>Your satisfaction is our top priority. Our friendly and knowledgeable customer service team is always ready to assist you. Whether you have questions about our products, need assistance with your purchase, or require post-purchase support, we're here to make your shopping experience exceptional</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mt-4 mt-lg-0">
+            <div class="box">
+              <span>03</span>
+              <h4>Warranty:</h4>
+              <p>We stand behind the quality of our watches with a comprehensive warranty, ensuring customer satisfaction and peace of mind.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Whu Us Section -->
+
+    <!-- ======= Menu Section ======= -->
+    <section id="menu" class="menu">
+      <div class="container">
+        <div class="section-title"> 
+          <h2>Check our  <span>Watches</span></h2>
+        </div>
+        <!-- Category buttons -->
+    <div class="category-buttons">
+      <button class="category-button" onclick="filterCategory('all')">Show All Watches</button>
+      <button class="category-button" onclick="filterCategory('vintage')">Vintage Watches</button>
+      <button class="category-button" onclick="filterCategory('luxury')">Luxury Watches</button>
+      <button class="category-button" onclick="filterCategory('smart')">Smart Watches</button>
+  </div>
+
+  <!-- Vintage Watches Section -->
+  <div class="category-section" id="vintage-section" style="justify-content: center;" >
+      <!-- Product Card 1 -->
+      <div class="product-card" onclick="showModal('vintage1')">
+          <img src="https://i.postimg.cc/zGSh9GvL/a168-WA-1wd-digital-alram-watch-removebg-preview.png" alt="Vintage Watch 1" width="100">
+          <h2>Casio A15WA</h2>
+          <button onclick="showModal('vintage1')">View Details</button>
+      </div>
+      <!-- Product Card 2 -->
+      <div class="product-card" onclick="showModal('vintage2')">
+          <img src="https://i.postimg.cc/L5WKT1Gr/s-l225-removebg-preview.png" alt="Vintage Watch 2" width="100">
+          <h2>Citizen Vintage</h2>
+          <button onclick="showModal('vintage2')">View Details</button>
+      </div>
+      <!-- Product Card 3 -->
+      <div class="product-card" onclick="showModal('vintage3')">
+          <img src="https://i.postimg.cc/j515mLfr/3e171f494180a761b8f832ac4cfea1f9-search-watches-removebg-preview.png" alt="Vintage Watch 3" width="100">
+          <h2>Omega Vintage</h2>
+          <button onclick="showModal('vintage3')">View Details</button>
+      </div>
+  </div>
+
+  <!-- Luxury Watches Section -->
+  <div class="category-section" id="luxury-section" style="justify-content: center;">
+      <!-- Product Card 4 -->
+      <div class="product-card" onclick="showModal('luxury1')">
+          <img src="https://i.postimg.cc/YSqQwLv4/GUC58855-1-enlarged-removebg-preview.png" alt="Luxury Watch 1" width="100">
+          <h2>Gucci 9000M</h2>
+          <button onclick="showModal('luxury1')">View Details</button>
+      </div>
+      <!-- Product Card 5 -->
+      <div class="product-card" onclick="showModal('luxury2')">
+          <img src="https://i.postimg.cc/v86fMsZv/Rolex-Datejust-154-removebg-preview-1.png" alt="Luxury Watch 2" width="100">
+          <h2>Rolex Date Just</h2>
+          <button onclick="showModal('luxury2')">View Details</button>
+      </div>
+      <!-- Product Card 6 -->
+      <div class="product-card" onclick="showModal('luxury3')">
+          <img src="https://i.postimg.cc/ryrT9hfm/R4886771311-removebg-preview.png" alt="Luxury Watch 3" width="100" height="130px">
+        
+
+          <h2>Rado Florence</h2>          <button onclick="showModal('luxury3')">View Details</button>
+      </div>
+  </div>
+
+  <!-- Smart Watches Section -->
+  <div class="category-section" id="smart-section" style="justify-content: center;">
+      <!-- Product Card 7 -->
+      <div class="product-card" onclick="showModal('smart1')">
+          <img src="https://i.postimg.cc/J7d6Ymdc/GA-140-GB-1-A1-removebg-preview.png" alt="Smart Watch 1" width="100" height="130px">
+          <h2>Casio G-Shock</h2>
+          <button onclick="showModal('smart1')">View Details</button>
+      </div>
+      <!-- Product Card 8 -->
+      <div class="product-card" onclick="showModal('smart2')">
+          <img src="https://i.postimg.cc/hGgpQGfg/51j09-GYS7-TL-AC-UF1000-1000-QL80-removebg-preview.png" alt="Smart Watch 2" width="100">
+          <h2>Apple Smart Watch</h2>
+          <button onclick="showModal('smart2')">View Details</button>
+      </div>
+      <!-- Product Card 9 -->
+      <div class="product-card" onclick="showModal('smart3')">
+          <img src="https://i.postimg.cc/7Z1N4yXR/A4-RED2210240-IJPZGC1-removebg-preview.png" alt="Smart Watch 3" width="100" height="130px">
+          <h2> Military A4RED </h2>
+          <button onclick="showModal('smart3')">View Details</button>
+      </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal-overlay" id="modalOverlay"></div>
+  <div class="modal" id="productModal">
+      <h2>Product Details</h2>
+      <p id="productDescription">Description of the product.</p>
+      <button onclick="hideModal()">Close</button>
+  </div>
+  <script>
+    // Function to filter product cards by category
+    function filterCategory(category) {
+        var allSections = document.querySelectorAll(".category-section");
+        allSections.forEach(function(section) {
+            section.style.display = "none";
+        });
+
+        if (category === 'all') {
+            allSections.forEach(function(section) {
+                section.style.display = "flex";
+            });
+        } else {
+            var categorySection = document.getElementById(category + '-section');
+            categorySection.style.display = "flex";
+        }
+    }
+
+    // Function to show the modal with product details
+    function showModal(productId) {
+        var modal = document.getElementById("productModal");
+        var modalOverlay = document.getElementById("modalOverlay");
+        modal.style.display = "block";
+        modalOverlay.style.display = "block";
+
+        // Set the product description based on productId
+        var productDescription = getProductDescription(productId);
+        document.getElementById("productDescription").textContent = productDescription;
+    }
+
+    // Function to hide the modal
+    function hideModal() {
+        var modal = document.getElementById("productModal");
+        var modalOverlay = document.getElementById("modalOverlay");
+        modal.style.display = "none";
+        modalOverlay.style.display = "none";
+    }
+
+    // Function to retrieve product description based on productId
+    function getProductDescription(productId) {
+        // You can replace this with actual product descriptions
+        var descriptions = {
+            'vintage1': 'Timeless Design Digital Display Water Resistant Reliable Timekeeping '  ,
+            'vintage2': 'Description of Vintage Watch 2.',
+            'vintage3': 'Description of Vintage Watch 3.',
+            'luxury1': 'Description of Luxury Watch 1.',
+            'luxury2': 'Description of Luxury Watch 2.',
+            'luxury3': 'Description of Luxury Watch 3.',
+            'smart1': 'Description of Smart Watch 1.',
+            'smart2': 'Description of Smart Watch 2.',
+            'smart3': 'Description of Smart Watch 3.'
+        };
+        return descriptions[productId] || 'Description not found.';
+    }
+</script>
+        <!-- End Menu Section -->
+
+    <!-- ======= Specials Section ======= -->
+    <section id="specials" class="specials">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Check our <span>Specials Watches</span></h2>
+          <p>Alberto Clock Crafting Timeless Elegance."</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-3">
+            <ul class="nav nav-tabs flex-column">
+              <li class="nav-item">
+                <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1">ROLEX</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-2">CASIO</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-3">OMEGA</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-4">CITIZEN</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-5">APPLE</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-9 mt-4 mt-lg-0">
+            <div class="tab-content">
+              <div class="tab-pane active show" id="tab-1">
+                <div class="row">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>Rolex Date -Just</h3>
+                    <p class="fst-italic">Model case
+                      Oyster, 41 mm, Oystersteel and white gold
+                      <br>
+                      Oyster architecture
+                      <br>
+                      Monobloc middle case, screw-down case back and winding crown
+                      <br>
+                      Diameter
+                      41 mm</p>
+                      <br>
+                    <p>Winding crown
+                      Screw-down, Twinlock double waterproofness system
+                      <br>
+                      Crystal
+                      Scratch-resistant sapphire, Cyclops lens over the date
+                      <br>
+                      Water resistance
+                      Waterproof to 100 metres / 330 feet</p>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+                    <img src="https://i.postimg.cc/R0frzkm3/rolex-datejust-rolex-submariner-rolex-gmt-master-ii-rolex-daytona-silver-rolex-watch-men-s-watches-r.png" alt="" class="img-fluid">
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="tab-2">
+                <div class="row">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>G-Shock Hameer Limited Edition</h3>
+                    <p class="fst-italic">Model Name: Casio G-Shock Hammer Limited Edition
+
+                      Case Material: Resin
+                      
+                      Case Diameter: Approximately 55mm
+                      
+                      Water Resistance: Up to 200 meters (660 feet)
+                      
+                      Movement: Quartz
+                      
+                      Display: Digital</p>
+                    <p>Special Features:
+
+                      Limited Edition Design
+                      Shock Resistance
+                      Vibration Resistance
+                      Magnetic Resistance
+                      Tough Solar Power
+                      Multi-Band 6 Atomic Timekeeping
+                      World Time Function
+                      Stopwatch
+                      Countdown Timer
+                      Alarm Function
+                      Full Auto-Calendar
+                      Super Illuminator LED Backlight
+                      Day and Date Display</p>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+                    <img src="https://i.postimg.cc/xdYK5m6X/casio-g-shock-768x937-removebg-preview.png" alt="" class="img-fluid">
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="tab-3">
+                <div class="row">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>Omega Sea Master Diver </h3>
+                    <p class="fst-italic">Model Name: Omega Seamaster Diver
+
+                      Case Material: Stainless Steel (typically, but can vary by model)
+                      <br>
+                      Case Diameter: Varies by specific model, but generally around 42mm
+                      <br>
+                      Water Resistance: Typically 300 meters (1,000 feet) or more
+                      <br>
+                      Movement: Automatic (self-winding)
+                      <br>
+                      Bezel: Unidirectional rotating bezel with a dive scale
+                      <br>
+                      Crystal: Scratch-resistant sapphire crystal</p>
+                  
+                      
+                      
+                      
+                      
+                      
+                      </p>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+                    <img src="https://i.postimg.cc/jSrDzbjc/21030422001001-2.png" alt="" class="img-fluid">
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="tab-4">
+                <div class="row">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>Citizen Limited Edition Chrono</h3>
+                    <p class="fst-italic">Model Name: Citizen Limited Edition Chronograph
+
+                      Case Material: Stainless Steel (common, but may vary by model)
+                      
+                      Case Diameter: Typically around 42mm, but it can vary depending on the specific model
+                      
+                      Water Resistance: Varies by model, but often at least 100 meters (330 feet)
+                      
+                      Movement: Quartz (typically, but there may be automatic versions)
+                      
+                      Chronograph: Yes, with sub-dials for measuring elapsed time
+                      
+                      Crystal: Scratch-resistant mineral or sapphire crystal
+                      
+                      Dial: Typically features chronograph sub-dials, date function, and luminescent markers/hands
+                      
+                    
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+                    <img src="https://i.postimg.cc/d1T6Sybr/citizen-limited-edition-chrono-time-at-black-dial-mens-watch-by011902e-removebg-preview.png" alt="" class="img-fluid">
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="tab-5">
+                <div class="row">
+                  <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>Apple Harmes Series 7</h3>
+                    <p class="fst-italic"> Case Material: Stainless Steel
+                      Case Sizes: 41mm and 45mm
+                      Display: Always-On Retina display with Force Touch
+                      Processor: Dual-core Apple S7 chip
+                      Connectivity: GPS + Cellular (optional), Wi-Fi, Bluetooth
+                      Water Resistance: Up to 50 meters
+                      Health and Fitness Features: Heart rate monitoring, ECG, Blood Oxygen (SpO2) monitoring, Sleep tracking, Fall detection, Fitness and Workout tracking
+                      Operating System: watchOS
+                      Battery Life: Up to 18 hours
+                      </p>
+                    <p></p>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+                    <img src="https://i.postimg.cc/7Z1N4yXR/A4-RED2210240-IJPZGC1-removebg-preview.png" alt="" class="img-fluid">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Specials Section -->
+
+    <!-- ======= Events Section ======= -->
+    <!-- <section id="events" class="events">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Organize Your <span>Events</span> in our Restaurant</h2>
+        </div>
+
+        <div class="events-slider swiper">
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="row event-item">
+                <div class="col-lg-6">
+                  <img src="assets/img/event-birthday.jpg" class="img-fluid" alt="">
+                </div>
+                <div class="col-lg-6 pt-4 pt-lg-0 content">
+                  <h3>Birthday Parties</h3>
+                  <div class="price">
+                    <p><span>$189</span></p>
+                  </div>
+                  <p class="fst-italic">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                    magna aliqua.
+                  </p>
+                  <ul>
+                    <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+                    <li><i class="bi bi-check-circle"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
+                    <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+                  </ul>
+                  <p>
+                    Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                    velit esse cillum dolore eu fugiat nulla pariatur
+                  </p>
+                </div>
+              </div>
+            </div><End testimonial item -->
+
+
+    <!-- ======= Book A Table Section ======= -->
+    <section id="book-a-table" class="book-a-table">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Book a <span>Order</span></h2>
+          <p> <strong>Book your perfect timepiece with Alberto Clock today! </strong></p>
+        </div>
+
+        <form action="forms/book-a-table.php" method="post" role="form" class="php-email-form">
+          <div class="row">
+            <div class="col-lg-4 col-md-6 form-group">
+              <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+              <div class="validate"></div>
+            </div>
+            <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
+              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email">
+              <div class="validate"></div>
+            </div>
+            <div class="col-lg-4 col-md-6 form-group mt-3 mt-md-0">
+              <input type="text" class="form-control" name="phone" id="phone" placeholder="Your Phone" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+              <div class="validate"></div>
+            </div>
+            <div class="col-lg-4 col-md-6 form-group mt-3">
+              <input type="text" name="date" class="form-control" id="date" placeholder="Date" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+              <div class="validate"></div>
+            </div>
+            <div class="col-lg-4 col-md-6 form-group mt-3">
+              <input type="text" class="form-control" name="time" id="time" placeholder="Time" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+              <div class="validate"></div>
+            </div>
+            <div class="col-lg-4 col-md-6 form-group mt-3">
+              <input type="number" class="form-control" name="people" id="people" placeholder="# of people" data-rule="minlen:1" data-msg="Please enter at least 1 chars">
+              <div class="validate"></div>
+            </div>
+          </div>
+          <div class="form-group mt-3">
+            <textarea class="form-control" name="message" rows="5" placeholder="Message"></textarea>
+            <div class="validate"></div>
+          </div>
+          <div class="mb-3">
+            <div class="loading">Loading</div>
+            <div class="error-message"></div>
+            <div class="sent-message">Your booking request was sent. We will call back or send an Email to confirm your reservation. Thank you!</div>
+          </div>
+          <div class="text-center"><button type="submit">Send Message</button></div>
+        </form>
+
+      </div>
+      <script>
+        function validateform() {
+          var Name = document.getElementById("name").value;
+          var Email = document.getElementById("email").value;
+          var Phone = document.getElementById("phone").value;
+          var Message = document.getElementById("message").value;
+      
+          var regex1 = /^[a-zA-Z]{3,20}$/;
+          var regex2 = /^[a-zA-Z0-9\._]+@[a-z]+\.[a-zA-Z\.]{3,}$/
+          var regex4 = /^(\+92|0)[0-9]{10}$/;
+      
+      
+      
+          if(Name.match(regex1) && Email.match(regex2) && Phone.match(regex4) && Message.match(regex1) ){
+              alert("Form Submitted" )
+          }
+          else{
+              alert("Please Fill All Field")
+          }
+      
+          }
+          </script>
+    </section><!-- End Book A Table Section -->
+
+    <!-- ======= Gallery Section ======= -->
+    <section id="gallery" class="gallery">
+      <div class="container-fluid">
+
+        <div class="section-title">
+          <h2>Some photos of<span>Our Watches</span></h2>
+          <p>Quality time, Quality Watches.</p>
+        </div>
+
+        <div class="row g-0">
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="https://watcharea.pk/cdn/shop/products/9_800x.png?v=1545983000" class="gallery-lightbox">
+                <img src="https://watcharea.pk/cdn/shop/products/9_800x.png?v=1545983000" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="https://watcharea.pk/cdn/shop/products/21354-12_800x.png?v=1524641772" class="gallery-lightbox">
+                <img src="https://watcharea.pk/cdn/shop/products/21354-12_800x.png?v=1524641772" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="https://watcharea.pk/cdn/shop/products/41295-04-1_800x.png?v=1524485087" class="gallery-lightbox">
+                <img src="https://watcharea.pk/cdn/shop/products/41295-04-1_800x.png?v=1524485087" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="https://paganidesignwatches.pk/cdn/shop/products/1617-bl4.jpg?v=1678028070" class="gallery-lightbox">
+                <img src="https://paganidesignwatches.pk/cdn/shop/products/1617-bl4.jpg?v=1678028070" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="https://saamaan.pk/cdn/shop/products/Comet-Infinity-Smartwatch.jpg?v=1671009969" class="gallery-lightbox">
+                <img src="https://saamaan.pk/cdn/shop/products/Comet-Infinity-Smartwatch.jpg?v=1671009969" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="https://watcharea.pk/cdn/shop/products/40007-01_800x.png?v=1524570556" class="gallery-lightbox">
+                <img src="https://watcharea.pk/cdn/shop/products/40007-01_800x.png?v=1524570556" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="https://www.watchstore.pk/image/cache/data/0C-500x500.jpeg" class="gallery-lightbox">
+                <img src="https://www.watchstore.pk/image/cache/data/0C-500x500.jpeg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="https://www.symbios.pk/image/cache/data/m/muti-color-led-watch-500x500-500x500.jpg" class="gallery-lightbox">
+                <img src="https://www.symbios.pk/image/cache/data/m/muti-color-led-watch-500x500-500x500.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End watches images  Section -->
+
+    <!-- ======= Chefs Section ======= -->
+    <section id="chefs" class="chefs">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Our  <span>Team</span></h2>
+          <p>Don't believe in just yourself, believe in your team.</p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="member">
+              <div class="pic"><img src="https://i.postimg.cc/W1Xyv453/my-passport-photo.jpg" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4> MUHAMMAD HAIDER </h4>
+                <span> TEAM LEADER </span>
+                <div class="social">
+                  <a href="https://twitter.com/" target="_blank "><i class="bi bi-twitter "></i></a>
+                  <a href="https://www.facebook.com/" target="_blank "><i class="bi bi-facebook"></i></a>
+                  <a href="https://www.instagram.com/" target="_blank "><i class="bi bi-instagram"></i></a>
+                  <a href="https://pk.linkedin.com/" target="_blank "><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="member">
+              <div class="pic"><img src="https://i.ibb.co/ggDxCKd/Abdulkarim.jpg" class="img-fluid" alt="">
+              </div>
+              <div class="member-info">
+                <h4>Abdulkarim Zeeshan</h4>
+                <span> TEAM MEMBER </span>
+                <div class="social">
+                  <a href="https://twitter.com/" target="_blank "><i class="bi bi-twitter"></i></a>
+                  <a href="https://www.facebook.com/" target="_blank "><i class="bi bi-facebook"></i></a>
+                  <a href="https://www.instagram.com/" target="_blank "><i class="bi bi-instagram"></i></a>
+                  <a href="https://pk.linkedin.com/" target="_blank "><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="member">
+              <div class="pic"><img src="https://i.postimg.cc/G2pVVmhB/9c89716d-95a7-480b-b92a-7362ae4745f4.jpg" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>Moheeb Saleem</h4>
+                <span>TEAM MEMBER</span>
+                <div class="social">
+                  <a href="https://twitter.com/" target="_blank "><i class="bi bi-twitter"></i></a>
+                  <a href="https://www.facebook.com/" target="_blank "><i class="bi bi-facebook"></i></a>
+                  <a href="https://www.instagram.com/" target="_blank "><i class="bi bi-instagram"></i></a>
+                  <a href="https://pk.linkedin.com/" target="_blank "><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="member">
+              <div class="pic"><img src="https://i.postimg.cc/QxbyLZ27/usman-pic-page-0001.jpg"  class="img-fluid" alt=""  style="height: 330px;"></div>
+              <div class="member-info">
+                <h4> Usman Altaf </h4>
+                <span>TEAM MEMBER</span>
+                <div class="social">
+                  <a href="https://twitter.com/" target="_blank "><i class="bi bi-twitter"></i></a>
+                  <a href="https://www.facebook.com/" target="_blank "><i class="bi bi-facebook"></i></a>
+                  <a href="https://www.instagram.com/" target="_blank "><i class="bi bi-instagram"></i></a>
+                  <a href="https://pk.linkedin.com/" target="_blank "><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Team Section -->
+
+    <!-- ======= Testimonials Section ======= -->
+    <section  id="reviews" class="testimonials">
+      <div class="container position-relative">
+
+        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="https://logodix.com/logo/1727578.png" class="testimonial-img" alt="">
+                <h3>Saara</h3>
+                <h4>OUR CLIENT</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                 " Discover time's beauty at Alberto Clock."
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="https://logodix.com/logo/1727578.png" class="testimonial-img" alt="">
+                <h3>Ahmed</h3>
+                <h4>OUR CLIENT</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  "Clock lover's paradise at Alberto Clock."
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="https://logodix.com/logo/1727578.png" class="testimonial-img" alt="">
+                <h3>Uzair</h3>
+                <h4>OUR CLIENT</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  "Alberto Clock is where time becomes art. Love their unique collection!"
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="https://logodix.com/logo/1727578.png" class="testimonial-img" alt="">
+                <h3>Zainab</h3>
+                <h4>OUR CLIENT</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  "Impressive clocks, impeccable service – Alberto Clock, you've won me over!"
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="https://logodix.com/logo/1727578.png" class="testimonial-img" alt="">
+                <h3>Hasan</h3>
+                <h4>OUR CLIENT</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  "From vintage to modern, Alberto Clock's selection is unrivaled."
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </section><!-- End Testimonials Section -->
+
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container">
+
+        <div class="section-title">
+          <h2><span>Contact</span> Us</h2>
+          <hr>
+          <p></p>
+        </div>
+      </div>
+       
+
+      <div class="map">
+        <iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d115780.4326017724!2d66.95063185783759!3d24.92735065273325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x3eb33f90157042d3%3A0x93d609e8bec9a880!2sSD-1%2C%20Block%20A%20North%20Nazimabad%20Town%2C%20Karachi%2C%2074700!3m2!1d24.9273733!2d67.0330334!5e0!3m2!1sen!2s!4v1694444500967!5m2!1sen!2s" frameborder="0" allowfullscreen></iframe>
+      </div>
+
+      <div class="container mt-5">
+
+        <div class="info-wrap">
+          <div class="row">
+            <div class="col-lg-3 col-md-6 info">
+              <i class="bi bi-geo-alt"></i>
+              <h4>Location:</h4>
+              <p>Aptech Computer Education <br>Karachi</p>
+            </div>
+
+            <div class="col-lg-3 col-md-6 info mt-4 mt-lg-0">
+              <i class="bi bi-clock"></i>
+              <h4>Open Hours:</h4>
+              <p>Monday-Saturday:<br>11:00 AM - 23:00 PM</p>
+            </div>
+
+            <div class="col-lg-3 col-md-6 info mt-4 mt-lg-0">
+              <i class="bi bi-envelope"></i>
+              <h4>Email:</h4>
+              <p>albertoclock07@gmail.com<br>contact@gmail.com</p>
+            </div>
+
+            <div class="col-lg-3 col-md-6 info mt-4 mt-lg-0">
+              <i class="bi bi-phone"></i>
+              <h4>Call:</h4>
+              <p>+92 3402060396<br>+92 3153876497</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+          <div class="row">
+            <div class="col-md-6 form-group">
+              <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+            </div>
+            <div class="col-md-6 form-group mt-3 mt-md-0">
+              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+            </div>
+          </div>
+          <div class="form-group mt-3">
+            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+          </div>
+          <div class="form-group mt-3">
+            <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+          </div>
+          <div class="my-3">
+            <div class="loading">Loading</div>
+            <div class="error-message"></div>
+            <div class="sent-message">Your message has been sent. Thank you!</div>
+          </div>
+          <div class="text-center"><button type="submit">Send Message</button></div>
+        </form> -->
+
+      </div>
+    </section>
+   <!-- End Contact Section -->
+    
+    <!--scrolling ticker start-->
+    <div class="container text-center bg-dark text-light">
+      <div class="row">
+          <div class="col-12 col-md-4">
+              <div id="date" class="mb-3">Date: </div>
+          </div>
+          <div class="col-12 col-md-4">
+              <div id="time" class="mb-3">Time: </div>
+          </div>
+          <div class="col-12 col-md-4">
+              <div id="location" class="mb-3">Location: </div>
+          </div>
+      </div>
+  </div>
+
+<script>
+  function updateTicker() {
+  const dateElement = document.getElementById("date");
+  const timeElement = document.getElementById("time");
+  const locationElement = document.getElementById("location");
+
+  // Get current date and time
+  const currentDate = new Date();
+  const dateString = currentDate.toDateString();
+  const timeString = currentDate.toLocaleTimeString();
+
+  // Check if the location has not been fetched before
+  if (!localStorage.getItem("location")) 
+  {
+      // Get geolocation (latitude and longitude)
+          if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(updateLocation);
+      }
+
+          function updateLocation(position) {
+          const latitude = position.coords.latitude.toFixed(2);
+          const longitude = position.coords.longitude.toFixed(2);
+
+
+              // Save location to local storage
+              localStorage.setItem("location", "Location: " + latitude + ", " + longitude);
+          };
+      }
+  
+      // Retrieve and update location from local storage to your website
+      const locationString = localStorage.getItem("location");
+
+      // Update ticker content
+      dateElement.innerHTML = "Date: " + dateString;
+      timeElement.innerHTML = "Time: " + timeString;
+      locationElement.innerHTML = locationString;
+          }
+
+      // Update the ticker every second
+      setInterval(updateTicker, 1000);
+
+      // Initial update
+      updateTicker();
+
+</script>
+<!--scroling ticker end-->
+
+</main><!-- End #main -->
+
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <h3>Alberto Clock</h3>
+      <p>Alberto Clock is known as the Master of Materials: from high-tech ceramic to sapphire crystal and diamonds to stainless steel, our innovative watches have no boundaries when it comes to design. Feel and discover the Alberto Clock difference</p>
+      <div class="social-links">
+        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+      </div>
+      <div class="copyright">
+        &copy; Copyright <strong><span>Alberto Clock</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/delicious-free-restaurant-bootstrap-theme/ -->
+        <!-- Designed by <a href="https://bootstrapmade.com/">Our </a> -->
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
